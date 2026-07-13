@@ -46,7 +46,7 @@ class FashionSearcher:
         inputs = self.processor(text=texts, return_tensors="pt", padding=True).to(
             self.device
         )
-        emb = self.model.get_text_features(**inputs)
+        emb = self.model.get_text_features(**inputs).pooler_output
         return (emb / emb.norm(dim=-1, keepdim=True)).cpu().numpy()
 
     def search(self, query: str, parsed_query, top_n: int = 200):

@@ -35,7 +35,8 @@ def extract_embeddings():
         images = [Image.open(p).convert("RGB") for p in batch_paths]
         inputs = processor(images=images, return_tensors="pt").to(device)
 
-        emb = model.get_image_features(**inputs)
+        outputs = model.get_image_features(**inputs)
+        emb = outputs.pooler_output
         emb = emb / emb.norm(dim=-1, keepdim=True)
         all_embeddings.append(emb.cpu().numpy())
 

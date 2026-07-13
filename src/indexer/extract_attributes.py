@@ -69,7 +69,7 @@ def extract_attributes():
     for category, prompts in prompt_sets.items():
         print(f"Extracting {category} attributes...")
         text_inputs = processor(text=prompts, return_tensors="pt", padding=True).to(device)
-        text_embs = model.get_text_features(**text_inputs)
+        text_embs = model.get_text_features(**text_inputs).pooler_output
         text_embs = text_embs / text_embs.norm(dim=-1, keepdim=True)
 
         all_scores = []
@@ -77,7 +77,7 @@ def extract_attributes():
             batch = image_paths_str[i : i + BATCH_SIZE]
             images = [Image.open(p).convert("RGB") for p in batch]
             img_inputs = processor(images=images, return_tensors="pt").to(device)
-            img_embs = model.get_image_features(**img_inputs)
+            img_embs = model.get_image_features(**img_inputs).pooler_output
             img_embs = img_embs / img_embs.norm(dim=-1, keepdim=True)
 
             scores = (img_embs @ text_embs.T).cpu().numpy()
