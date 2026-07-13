@@ -1,14 +1,21 @@
 import sys
 import numpy as np
+import torch
 from pathlib import Path
 
 sys.path.append(str(Path(__file__).resolve().parent.parent.parent))
+
+MODEL_NAME = "patrickjohncyh/fashion-clip"
 
 
 class FashionSearcher:
     def __init__(self, processed_dir="data/processed"):
         import faiss
-        from fashion_clip.fashion_clip import FashionCLIP
+        from transformers import CLIPModel, CLIPProcessor
+
+        self.device = "cuda" if torch.cuda.is_available() else "cpu"
+        self.model = CLIPModel.from_pretrained(MODEL_NAME).to(self.device).eval()
+        self.processor = CLIPProcessor.from_pretrained(MODEL_NAME)
 
         self.index = faiss.read_index(f"{processed_dir}/faiss_index.bin")
         self.image_paths = np.load(
@@ -34,11 +41,16 @@ class FashionSearcher:
             f"{processed_dir}/attr_style_labels.npy", allow_pickle=True
         ).tolist()
 
-        self.fclip = FashionCLIP("patrickjohncyh/fashion-clip")
+    @torch.inference_mode()
+    def _encode_text(self, texts):
+        inputs = self.processor(text=texts, return_tensors="pt", padding=True).to(
+            self.device
+        )
+        emb = self.model.get_text_features(**inputs)
+        return (emb / emb.norm(dim=-1, keepdim=True)).cpu().numpy()
 
     def search(self, query: str, parsed_query, top_n: int = 200):
-        query_emb = self.fclip.encode_text([query], batch_size=1)
-        query_emb = query_emb / np.linalg.norm(query_emb, axis=1, keepdims=True)
+        query_emb = self._encode_text([query])
 
         scores, indices = self.index.search(query_emb.astype(np.float32), top_n)
         scores = scores[0]
@@ -90,11 +102,7 @@ class FashionSearcher:
         if not atomic_texts:
             return np.ones(len(indices))
 
-        text_embs = self.fclip.encode_text(
-            atomic_texts, batch_size=len(atomic_texts)
-        )
-        text_embs = text_embs / np.linalg.norm(text_embs, axis=1, keepdims=True)
-
+        text_embs = self._encode_text(atomic_texts)
         candidate_embs = self.embeddings[indices]
         sims = candidate_embs @ text_embs.T
         return sims.mean(axis=1)

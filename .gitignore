@@ -9,7 +9,7 @@ __pycache__/
 *.egg-info/
 
 # Models cache
-models/
+/models/
 
 # IDE
 .vscode/
