@@ -2,14 +2,18 @@
 name = "fashion-retrieval"
 version = "0.1.0"
 description = "Multimodal Fashion & Context Retrieval System"
-requires-python = ">=3.10"
+requires-python = ">=3.10,<3.14"
 dependencies = [
     "faiss-cpu>=1.7.4",
-    "torch>=2.0.0",
     "transformers>=4.40.0",
     "accelerate>=0.28.0",
+    "openai>=1.0.0",
     "pydantic>=2.0.0",
     "streamlit>=1.30.0",
     "numpy>=1.24.0",
     "pillow>=10.0.0",
+    "torchvision",
 ]
+
+[[tool.uv.index]]
+url = "https://download.pytorch.org/whl/cpu"

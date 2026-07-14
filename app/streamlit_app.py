@@ -41,7 +41,7 @@ if query:
         for i, result in enumerate(results):
             with cols[i % 5]:
                 img = Image.open(result.path)
-                st.image(img, use_container_width=True)
+                st.image(img, width=300)
                 st.caption(
                     f"Score: {result.score:.3f} | CLIP: {result.clip_similarity:.2f} | "
                     f"Atomic: {result.atomic_similarity:.2f} | Attr: {result.attr_consistency:.2f}"

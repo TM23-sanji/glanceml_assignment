@@ -1776,6 +1776,83 @@
       "angle": 0
     },
     {
+      "id": "HUf4ZfMkjEARXSmlqNMmo",
+      "type": "rectangle",
+      "x": 1017.3999786376953,
+      "y": 513.0000762939453,
+      "width": 301.2001190185547,
+      "height": 31.800048828125,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "#d4f5d4",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "angle": 0,
+      "seed": 356527649,
+      "version": 298,
+      "versionNonce": 1760259905,
+      "isDeleted": false,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": {
+        "type": 3
+      },
+      "boundElements": [
+        {
+          "id": "NLkSjozhnr9cl1k5AUN1I",
+          "type": "text"
+        }
+      ],
+      "updated": 1784039556960,
+      "link": null,
+      "locked": false,
+      "index": "anG"
+    },
+    {
+      "id": "NLkSjozhnr9cl1k5AUN1I",
+      "type": "text",
+      "x": 1022.3999786376953,
+      "y": 518.0000762939453,
+      "width": 261.1458435058594,
+      "height": 18,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "text": "this example is explained in blog.html as well",
+      "fontSize": 12,
+      "fontFamily": 1,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "containerId": "HUf4ZfMkjEARXSmlqNMmo",
+      "seed": 12189807,
+      "version": 203,
+      "versionNonce": 2065555233,
+      "isDeleted": false,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "boundElements": [
+        {
+          "id": "HUf4ZfMkjEARXSmlqNMmo",
+          "type": "rectangle"
+        }
+      ],
+      "updated": 1784039556960,
+      "link": null,
+      "locked": false,
+      "originalText": "this example is explained in blog.html as well",
+      "autoResize": true,
+      "lineHeight": 1.5,
+      "index": "anV",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "angle": 0
+    },
+    {
       "id": "box-scores",
       "type": "rectangle",
       "x": 955,
@@ -1791,8 +1868,8 @@
       "opacity": 100,
       "angle": 0,
       "seed": 900005,
-      "version": 1,
-      "versionNonce": 1,
+      "version": 2,
+      "versionNonce": 1887275649,
       "isDeleted": false,
       "groupIds": [],
       "frameId": null,
@@ -1805,7 +1882,7 @@
           "id": "text-scores"
         }
       ],
-      "updated": 1784036000004,
+      "updated": 1784039517984,
       "link": null,
       "locked": false,
       "index": "ao"
@@ -1868,8 +1945,8 @@
       "opacity": 100,
       "angle": 0,
       "seed": 900007,
-      "version": 1,
-      "versionNonce": 1,
+      "version": 4,
+      "versionNonce": 1481282145,
       "isDeleted": false,
       "groupIds": [],
       "frameId": null,
@@ -1882,7 +1959,7 @@
           "id": "text-fusion"
         }
       ],
-      "updated": 1784036000006,
+      "updated": 1784039517984,
       "link": null,
       "locked": false,
       "index": "aq"
@@ -1892,8 +1969,8 @@
       "type": "text",
       "x": 960,
       "y": 350,
-      "width": 400,
-      "height": 120,
+      "width": 391.2493896484375,
+      "height": 90,
       "strokeColor": "#1e1e1e",
       "backgroundColor": "transparent",
       "text": "Fusion: 0.4×0.92 + 0.35×0.88 + 0.25×0.86 = 0.89\n\nImage A (yellow raincoat, rain):  0.89 ✓  correct\nImage B (yellow umbrella, rain):  0.75 ✗  attr=0.45 (no raincoat)\nImage C (red raincoat, rain):     0.48 ✗  clip=0.50 (wrong color)",
@@ -1903,8 +1980,8 @@
       "verticalAlign": "top",
       "containerId": "box-fusion",
       "seed": 900008,
-      "version": 1,
-      "versionNonce": 1,
+      "version": 2,
+      "versionNonce": 568267855,
       "isDeleted": false,
       "groupIds": [],
       "frameId": null,
@@ -1915,7 +1992,7 @@
           "id": "box-fusion"
         }
       ],
-      "updated": 1784036000007,
+      "updated": 1784039252579,
       "link": null,
       "locked": false,
       "originalText": "Fusion: 0.4×0.92 + 0.35×0.88 + 0.25×0.86 = 0.89\n\nImage A (yellow raincoat, rain):  0.89 ✓  correct\nImage B (yellow umbrella, rain):  0.75 ✗  attr=0.45 (no raincoat)\nImage C (red raincoat, rain):     0.48 ✗  clip=0.50 (wrong color)",
@@ -2029,6 +2106,49 @@
         "gap": 0
       },
       "index": "at",
+      "fillStyle": "solid"
+    },
+    {
+      "id": "WR_J2hGUxX1YxJyd3p5Du",
+      "type": "arrow",
+      "x": 1159.1999816894531,
+      "y": 476.5999755859375,
+      "width": 0,
+      "height": 35,
+      "strokeColor": "#888888",
+      "backgroundColor": "transparent",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "angle": 0,
+      "seed": 349133121,
+      "version": 86,
+      "versionNonce": 682952353,
+      "isDeleted": false,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "boundElements": null,
+      "updated": 1784039517984,
+      "link": null,
+      "locked": false,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          35
+        ]
+      ],
+      "lastCommittedPoint": null,
+      "startArrowhead": null,
+      "endArrowhead": "arrow",
+      "startBinding": null,
+      "endBinding": null,
+      "index": "atV",
       "fillStyle": "solid"
     }
   ],

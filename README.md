@@ -5,7 +5,9 @@ Compositional fashion image retrieval using FashionCLIP + query decomposition + 
 ## Architecture
 
 - **Indexer**: FashionCLIP embeddings + zero-shot attribute extraction → FAISS
-- **Retriever**: Qwen2.5-1.5B query parsing → FAISS coarse search → compositional re-ranking
+- **Retriever**: LLM (Llama 3.1 via HF API) query parsing → FAISS coarse search → compositional re-ranking
+
+![Architecture Diagram](image.png)
 
 ## Setup
 
