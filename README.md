@@ -32,7 +32,7 @@ uv sync
 
 ```bash
 # Activate environment and set HF token (loads model weights locally)
-export HF_TOKEN="your_huggingface_token"
+export HF_TOKEN="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"
 
 source .venv/bin/activate
 streamlit run app/streamlit_app.py
