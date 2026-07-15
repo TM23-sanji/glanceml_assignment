@@ -1,6 +1,7 @@
 # Multimodal Fashion & Context Retrieval
 
 Compositional fashion image retrieval using FashionCLIP + query decomposition + attribute consistency re-ranking.
+youtube demo link - https://www.youtube.com/watch?v=z05V6_NhYbE
 
 ## Architecture
 
