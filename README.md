@@ -32,6 +32,7 @@ uv sync
 
 ```bash
 # Activate environment and set HF token (loads model weights locally)
+# I am aware that this is a bad practice
 export HF_TOKEN="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"
 
 source .venv/bin/activate
